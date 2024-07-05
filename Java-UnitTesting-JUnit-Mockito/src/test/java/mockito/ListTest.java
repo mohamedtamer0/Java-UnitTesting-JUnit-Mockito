@@ -1,7 +1,10 @@
 package mockito;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 
 import java.util.List;
@@ -44,4 +47,15 @@ public class ListTest {
 		assertEquals("Tamer", list.get(1));
 	}
 
+	@Test
+	public void bddAliases_UsingGivenWillReturn() {
+		List<String> list = mock(List.class);
+
+		//given
+		given(list.get(Mockito.anyInt())).willReturn("Tamer");
+
+		//then
+		assertThat("Tamer", is(list.get(0)));
+		assertThat("Tamer", is(list.get(0)));
+	}
 }
