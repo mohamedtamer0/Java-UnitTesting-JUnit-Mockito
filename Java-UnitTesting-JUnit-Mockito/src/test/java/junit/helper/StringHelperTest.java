@@ -1,5 +1,6 @@
-package org.example.helper;
+package junit.helper;
 
+import org.example.helper.StringHelper;
 import org.junit.Before;
 import org.junit.Test;
 

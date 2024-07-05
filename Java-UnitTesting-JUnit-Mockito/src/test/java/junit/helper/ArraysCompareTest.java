@@ -1,4 +1,4 @@
-package org.example.helper;
+package junit.helper;
 
 import java.util.Arrays;
 
